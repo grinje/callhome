@@ -1,0 +1,18 @@
+#!/bin/sh /etc/rc.common
+
+# Put this file in /etc/rc.d
+
+START=91
+STOP=15
+
+start() {
+        echo Starting callhome
+    ( /usr/local/bin/sshconnect.sh )&
+
+}
+
+stop() {
+        echo Stopping callhome
+    killall sshconnect.sh
+        # commands to kill application
+}

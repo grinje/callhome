@@ -1,0 +1,17 @@
+#
+# Put this file in /usr/lib/systemd/system
+# /bin/ln -s /usr/lib/systemd/system/callhome.service /etc/systemd/system/multi-user.target.wants/callhome.service
+#
+
+[Unit]
+Description=Callhome
+ConditionFileIsExecutable=/usr/local/bin/sshconnect.sh
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/sshconnect.sh
+TimeoutSec=0
+Restart=on-failure
+StandardOutput=syslog+console
+StandardError=syslog+console
