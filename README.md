@@ -34,7 +34,7 @@ Host remotehost
 To allow RDP towards a Windows computer (that has created a tunnel towards its RDP port):
 ```
 Host remotehost
-  Hostname remotehost
+  Hostname your.control.server
   User root
   Port 8080
   LocalForward 2001 localhost:2001
