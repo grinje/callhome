@@ -2,10 +2,16 @@
 
 Use a Raspberry Pi or some other computer with linux on it. Place it in a separate DMZ on your firewall, and allow only your SSH ports to it. You will need two ports for a proper setup with 2FA for jump access.
 
-## /home/**callhome**/.ssh/authorized_keys
+We do not want to allocate pty´s and no agent forwarding for these callhome reverse tunnels. The syntax of the authorized_keys file is
+
+   **command="/bin/echo <port>",no-user-rc,no-X11-forwarding,no-agent-forwarding,no-pty** ssh-rsa <key> **name:descriptive_text**
+
+The **<port>** is the port number that this particular tunnel with allocate on the callhome server. It will be a tunnel towards the SSH daemon on the remote host.
+
+## /home/__callhome__/.ssh/authorized_keys
 
 ```
-**command="/bin/echo 2001",no-user-rc,no-X11-forwarding,no-agent-forwarding,no-pty** ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDJQVmgEtPBRQoPrILF/VSY2bHO7+so3rFSww6zsVvCaJU7pVZBhnB+x2iyCpzd/PglEZ8YSpoEdOeZgLwqnQbR4qTTOfTUTLbgMiWjNX704Bh5kvINDnBEItjbaAAERcxU9VuvVPgjoirUNHAvaEwag5+msBaeGg8CgO+YvfrqY3MuYULFVRbTfPpT4OeC0/zerFcorKT9Ma5JgHYFhXiDr5Q1+R4J+LUxwVJMaJ1xr37TPzeUZDUkke1plXBX0TDUkwnTeUZFcCiCN1jdt5izMmyLXOYJlG8y//uf15jcPJOki85khfL2vQXsneN/D5Y3LxQZNy236Rsnk4ZOUUeitnqtqOQ1/B7yANOdX4nDpAVW6CgMDWM9AIJtfKNFt/wXYckoEAr27ZjOxL0rB7nyJKiMJb2jv8OvKhwMz97X8EMQCV0UUlS7CABkUPPZmsZYbwnQUjDJflaoOlYPoJQ2B1GpCd0pbG6ytBRGnIPfmTSleZd+FElNsebwprMhdsc= name:descriptive_text
+command="/bin/echo 2001",no-user-rc,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDJQVmgEtPBRQoPrILF/VSY2bHO7+so3rFSww6zsVvCaJU7pVZBhnB+x2iyCpzd/PglEZ8YSpoEdOeZgLwqnQbR4qTTOfTUTLbgMiWjNX704Bh5kvINDnBEItjbaAAERcxU9VuvVPgjoirUNHAvaEwag5+msBaeGg8CgO+YvfrqY3MuYULFVRbTfPpT4OeC0/zerFcorKT9Ma5JgHYFhXiDr5Q1+R4J+LUxwVJMaJ1xr37TPzeUZDUkke1plXBX0TDUkwnTeUZFcCiCN1jdt5izMmyLXOYJlG8y//uf15jcPJOki85khfL2vQXsneN/D5Y3LxQZNy236Rsnk4ZOUUeitnqtqOQ1/B7yANOdX4nDpAVW6CgMDWM9AIJtfKNFt/wXYckoEAr27ZjOxL0rB7nyJKiMJb2jv8OvKhwMz97X8EMQCV0UUlS7CABkUPPZmsZYbwnQUjDJflaoOlYPoJQ2B1GpCd0pbG6ytBRGnIPfmTSleZd+FElNsebwprMhdsc= name:descriptive_text
 ```
 
 ## /home/**online**/.ssh/authorized_keys
