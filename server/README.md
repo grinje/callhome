@@ -22,5 +22,6 @@ command="/usr/local/bin/online.pl",no-user-rc,no-X11-forwarding,no-agent-forward
 
 ## Sample /home/jump/.ssh/authorized_keys
 
+```
 command="/bin/nc localhost 2001",no-user-rc,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDUTQGgRril0r/ygoZHmyatxIzgZVO3lNXD0hdKYO0NhqWFW2nB84IxEumWHC3686NBdVLRTzmYLXvwQr0mSjPhKKAYMPWaiNRguiftkAvPbW8a83vQMR9yuK7BLg9l7vVygW1ha0+a5owLttLbnH3vmw7NkV0nEEi5EDGcX3UnZQaHszvq3eI1NgrvzPPGzkV6VIODGPBDbN85ruR6qYsUyNko1i6Cj1qv3lP39xmcNRQmcHzrDcxG8aUruyAhtu0t6CMnd7/Cl73/tV1b7DOuVV9GwtauJoV5LWVPRtccJfQKemo13w8oZYdylqMP7rhw9CRFj4f5FGVFs+kdbLwHtJH+W+lxaq+V2aZxPfkto58ILi4sOabL9yAHh6mhBi16Wfn6UlvclZix8DtRqZBnUgEwxm6rk/yQUGQv7kR+Ied5WTdSXMzB+oJDiJTruktf8FaRdaRrr9Qv2o+Rbvog2Z+en4Am1P4pcaHQci8eQH8PQGUteYKWZAihXGiXxsc= user@domain.org
 ```
