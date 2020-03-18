@@ -12,7 +12,7 @@ To make use of the jump station from your desktop, put something like this in yo
 ```
 Host remotehost
   Hostname remotehost
-  User root
+  User username
   ProxyCommand ssh -p 8080 jump@your.control.server nc localhost 2001
 ```
 
@@ -20,7 +20,7 @@ In case you only have access to a single tunnel, this can be put as
 ```
 Host remotehost
   Hostname remotehost
-  User root
+  User username
   ProxyCommand ssh -p 8080 jump@your.control.server no-command
 ```
 
@@ -28,14 +28,14 @@ Or, when using the supplied **commands.pl** script for authorizing multiple tunn
 ```
 Host remotehost
   Hostname remotehost
-  User root
+  User username
   ProxyCommand ssh -p 8080 jump@your.control.server 2001
 ```
 To allow RDP towards a Windows computer (that has created a tunnel towards its RDP port):
 ```
 Host remotehost
   Hostname your.control.server
-  User root
+  User jump
   Port 8080
   LocalForward 2001 localhost:2001
   RemoteCommand no-command
